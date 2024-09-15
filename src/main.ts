@@ -7,9 +7,10 @@ async function bootstrap() {
 
 	//const PORT = process.env.PORT || 4200
 	// await app.listen(4200)
-
-	app.enableCors()
-	const PORT = process.env.PORT
-	await app.listen(PORT)
+	//app.enableCors()
+	app.use(cors({
+    		origin: 'https://edu-slovakia.vercel.app', 
+  	}));
+	await app.listen(process.env.PORT || 4200)
 }
 bootstrap()
